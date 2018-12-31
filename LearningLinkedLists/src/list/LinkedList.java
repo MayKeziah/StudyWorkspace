@@ -3,7 +3,8 @@ package list;
 import intNode.Node;
 
 public class LinkedList implements IntList{
-	Node head;
+	private int count;
+	private Node head;
 	
 	public LinkedList() {}
 	public LinkedList(Node newHead) {

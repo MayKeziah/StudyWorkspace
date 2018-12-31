@@ -1,8 +1,8 @@
 package intNode;
 
 public class Node {
-	int data;
-	Node next;
+	private int data;
+	private Node next;
 	
 	public Node() {}
 	public Node(int newData) {
