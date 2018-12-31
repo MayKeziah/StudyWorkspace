@@ -17,9 +17,8 @@ public class ReverseCharArray {
 		char[] mySymbolArray = {'@', '#', '$', '%'};
 		reverse(mySymbolArray);
 		System.out.println(Arrays.toString(mySymbolArray));
-		boolean[] testMe = new boolean[5];
-		System.out.println(Arrays.toString(testMe));
 	}
+	
 	
 	public static void reverse(char[] myList) {
 		int length = myList.length;
