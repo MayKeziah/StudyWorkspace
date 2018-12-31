@@ -1,0 +1,24 @@
+package charArray;
+
+import java.util.Arrays;
+
+public class ReverseCharArray {
+
+	public static void main(String[] args) {
+		char[] myEvenArray = {'a', 'b', 'c', 'd'};
+		reverse(myEvenArray);
+		System.out.println(Arrays.toString(myEvenArray));
+	}
+	
+	public static void reverse(char[] myList) {
+		int length = myList.length;
+		char tempElement;
+		for (int i = 0; i <= (length/2); i++) {
+			tempElement = myList[i];
+			myList[i] = myList[length-i];
+			myList[length-i] = tempElement;
+		}
+		
+	}
+
+}
