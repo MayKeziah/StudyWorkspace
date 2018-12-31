@@ -1,7 +1,7 @@
 package list;
 
 public interface IntList {
-	public boolean add(int data);
-	public boolean delete(int index);
-	public boolean insert(int data, int index);
+	public void add(int data);
+	public void delete(int position);
+	public void insert(int data, int position);
 }
