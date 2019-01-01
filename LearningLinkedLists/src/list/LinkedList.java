@@ -3,32 +3,37 @@ package list;
 import intNode.Node;
 
 public class LinkedList implements IntList{
-	private int size;
 	private Node head;
 	
 	public LinkedList() {
 	}
 	public LinkedList(Node newHead) {
 		this.head = newHead;
-		size = 1;
 	}
 	
 	/**
 	 * @param data the data to insert
 	 */
 	public void add(int data) {
-		insert(data, size);
+		Node current = head;
+		while (current.getNext() != null) {
+			current = current.getNext();
+		}
+		current.setNext(new Node(data));
 	}
 	
 	/**
 	 * @param position the position of the Node to delete
 	 */
 	public void delete(int position) {
-		Node prior = getEntry(position - 1);
-		Node post = prior.getNext().getNext();
-		prior.setNext(post);
-		size--;
-		
+		if (position == 1) {
+			setHead(head.getNext());
+		}
+		else {
+			Node prior = getEntry(position - 1);
+			Node post = prior.getNext().getNext();
+			prior.setNext(post);
+		}		
 	}
 	
 	/**
@@ -36,9 +41,16 @@ public class LinkedList implements IntList{
 	 * @return the Node at the given position
 	 */
 	public Node getEntry(int position) {
+		if (position < 1) {
+			throw new IllegalArgumentException("Invalid position: cannot be less than 1.");
+		}
 		Node current = head;
 		for (int i = 1; i < position; i++) {
+			if (current.getNext() == null) {
+				throw new IllegalArgumentException("Invalid position: Position too large, this list is " + i + " entries in length.");
+			}
 			current = current.getNext();
+			
 		}
 		return current;
 	}
@@ -49,13 +61,6 @@ public class LinkedList implements IntList{
 	public Node getHead() {
 		return head;
 	}
-	
-	/**
-	 * @return the size
-	 */
-	public int getSize() {
-		return size;
-	}	
 	
 	/**
 	 * @param data the data to insert, 
@@ -75,7 +80,6 @@ public class LinkedList implements IntList{
 				prior.getNext().setNext(temp);
 			}
 		}
-		size++;
 	}
 	
 	/**
@@ -84,7 +88,7 @@ public class LinkedList implements IntList{
 	public void print() {
 		Node current = head;
 		String toReturn = "[" + current.getData();
-		for (int i = 2; i <= size; i++) {
+		while(current.getNext() != null) {
 			current = current.getNext();
 			toReturn += ", " + current.getData();
 		}
@@ -93,12 +97,16 @@ public class LinkedList implements IntList{
 	}
 	
 	/**
-	 * @param head the head to set
+	 * @param head the head to replace current
 	 */
-	public void setHead(Node head) {
+	public void replaceHead(Node head) {
 		Node positionTwo = this.head.getNext();
-		this.head = head;
+		this.setHead(head);
 		head.setNext(positionTwo);
+	}
+	
+	public void setHead(Node head) {
+		this.head = head;
 	}
 
 }
