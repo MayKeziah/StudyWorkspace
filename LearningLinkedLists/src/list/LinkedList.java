@@ -37,7 +37,7 @@ public class LinkedList implements IntList{
 	 */
 	public Node getEntry(int position) {
 		Node current = head;
-		for (int i = 0; i < position; i++) {
+		for (int i = 1; i < position; i++) {
 			current = current.getNext();
 		}
 		return current;
@@ -62,13 +62,34 @@ public class LinkedList implements IntList{
 	 * @param position the Node count after which to insert (count from 1).
 	 */
 	public void insert(int data, int position) {
-		Node current = getEntry(position);
-		Node temp = current.getNext();
-		current.setNext(new Node(data));
-		if (temp != null) {
-			current.getNext().setNext(temp);
+		Node temp;
+		if (position == 0) {
+			temp = head;
+			this.setHead(new Node(data, temp));
+		}
+		else {
+			Node prior = getEntry(position);
+			temp = prior.getNext();
+			prior.setNext(new Node(data));
+			if (temp != null) {
+				prior.getNext().setNext(temp);
+			}
 		}
 		size++;
+	}
+	
+	/**
+	 * @output prints a representation of the list to the console in format: [0, 0, 0, 0]
+	 */
+	public void print() {
+		Node current = head;
+		String toReturn = "[" + current.getData();
+		for (int i = 2; i <= size; i++) {
+			current = current.getNext();
+			toReturn += ", " + current.getData();
+		}
+		toReturn += "]";
+		System.out.println(toReturn);
 	}
 	
 	/**
@@ -79,7 +100,5 @@ public class LinkedList implements IntList{
 		this.head = head;
 		head.setNext(positionTwo);
 	}
-	
-	
 
 }
