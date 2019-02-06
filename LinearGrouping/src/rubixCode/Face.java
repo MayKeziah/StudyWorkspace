@@ -2,7 +2,7 @@ package rubixCode;
 
 import java.util.Arrays;
 
-public class Face implements rubixFace<Color> {
+public class Face implements rubixFace {
 	private Color[][] face = new Color[3][3];
 	
 	/**

@@ -1,5 +1,5 @@
 package rubixCode;
 
-public interface rubixFace<T> {
+public interface rubixFace {
 	public boolean isSolid();
 }
