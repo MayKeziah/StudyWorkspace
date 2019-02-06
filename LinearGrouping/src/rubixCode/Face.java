@@ -79,7 +79,7 @@ public class Face implements rubixFace {
 	 * @return a String representation of the face data-field Color[][]
 	 * */
 	public String toString() {
-		String toReturn = "---------------------\n";
+		String toReturn = "";
 		for (int i = 0; i < 3; i++) {
 			toReturn += Arrays.toString(face[i]) + "\n\n";
 		}
