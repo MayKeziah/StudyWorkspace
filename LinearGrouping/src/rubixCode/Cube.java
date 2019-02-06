@@ -34,15 +34,18 @@ public class Cube {
 	}
 	
 	/**
+	 * print: prints the return of the toString method for cube
+	 * */
+	public void print() {
+		System.out.println(toString());
+	}
+	
+	/**
 	 * Overrides the toString method
 	 * 
 	 * @return a String representation of a Rubix Cube
 	 * */
 	public String toString() {
-		String toReturn = "";
-		for(int i = 0; i < 6; i++) {
-			toReturn += cube.getEntry(i).getData().toString();
-		}
-		return toReturn;
+		return cube.toString();
 	}
 }

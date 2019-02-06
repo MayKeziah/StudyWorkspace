@@ -5,7 +5,7 @@ public class rubixCodeClient {
 //		Face test = new Face(Color.GREEN);
 //		System.out.println("" + test + test.isSolid());
 		Cube test2 = new Cube();
-		test2.getCube().print();
+		test2.print();
 	}
 
 }
