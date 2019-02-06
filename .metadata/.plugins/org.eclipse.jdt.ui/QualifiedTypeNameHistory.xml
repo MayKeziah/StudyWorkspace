@@ -3,4 +3,7 @@
 <fullyQualifiedTypeName name="intNode.Node"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="rubixCode.Face"/>
+<fullyQualifiedTypeName name="linkedList.LinkedList"/>
+<fullyQualifiedTypeName name="linkedList.Node"/>
 </qualifiedTypeNameHistroy>
