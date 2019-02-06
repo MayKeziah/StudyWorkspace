@@ -1,7 +1,11 @@
 package rubixCode;
 
+import linkedList.LinkedList;
+import linkedList.Node;
+
 public class Cube {
-	private Face[] cube = new Face[6];
+	private Node head = new Node(new Face(Color.BLUE));
+	private LinkedList cube = new LinkedList(head);
 	
 	/**
 	 * Constructor: creates a solved cube, all faces are one solid color.
@@ -11,9 +15,9 @@ public class Cube {
 	}
 
 	/**
-	 * @return the cube
+	 * @return the cube's head (Node)
 	 */
-	public Face[] getCube() {
+	public LinkedList getCube() {
 		return cube;
 	}
 
@@ -21,9 +25,11 @@ public class Cube {
 	 * resets the cube to a solved state
 	 */
 	public void reset() {
-		Color[] colors = {Color.BLUE, Color.GREEN, Color.ORANGE, Color.RED, Color.WHITE, Color.YELLOW};
-		for(int i = 0; i < 6; i++) {
-			cube[i] = new Face(colors[i]);
+		head = new Node(new Face(Color.BLUE));
+		cube = new LinkedList(head);
+		Color[] colors = {Color.GREEN, Color.ORANGE, Color.RED, Color.WHITE, Color.YELLOW};
+		for(int i = 0; i < 5; i++) {
+			cube.add(new Face(colors[i]));
 		}
 	}
 	
@@ -34,8 +40,8 @@ public class Cube {
 	 * */
 	public String toString() {
 		String toReturn = "";
-		for(Face elt: cube) {
-			toReturn += elt.toString();
+		for(int i = 0; i < 6; i++) {
+			toReturn += cube.getEntry(i).getData().toString();
 		}
 		return toReturn;
 	}

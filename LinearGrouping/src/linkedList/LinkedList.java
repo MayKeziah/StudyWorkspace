@@ -41,13 +41,16 @@ public class LinkedList implements FaceList{
 	 * @return the Node at the given position
 	 */
 	public Node getEntry(int position) {
-		if (position < 1) {
-			throw new IllegalArgumentException("Invalid position: cannot be less than 1.");
+		if (position < 0) {
+			throw new IllegalArgumentException("Invalid position: cannot be less than 0.");
 		}
 		Node current = head;
-		for (int i = 1; i < position; i++) {
+		if (position == 0) {
+			return current;
+		}
+		for (int i = 0; i < position - 1; i++) {
 			if (current.getNext() == null) {
-				throw new IllegalArgumentException("Invalid position: Position too large, this list is " + i + " entries in length.");
+				throw new IllegalArgumentException("Invalid position: Position too large, this list is " + (i + 1) + " entries in length.");
 			}
 			current = current.getNext();
 			
@@ -86,14 +89,7 @@ public class LinkedList implements FaceList{
 	 * @output prints a representation of the list to the console in format: [0, 0, 0, 0]
 	 */
 	public void print() {
-		Node current = head;
-		String toReturn = "[" + current.getData();
-		while(current.getNext() != null) {
-			current = current.getNext();
-			toReturn += ", " + current.getData();
-		}
-		toReturn += "]";
-		System.out.println(toReturn);
+		System.out.println(toString());
 	}
 	
 	/**
@@ -107,6 +103,21 @@ public class LinkedList implements FaceList{
 	
 	public void setHead(Node head) {
 		this.head = head;
+	}
+	
+	/**
+	 * toString
+	 * 
+	 * @return a String representation of the list
+	 * */
+	public String toString() {
+		Node current = head;
+		String toReturn = current.getData().toString();
+		while(current.getNext() != null) {
+			current = current.getNext();
+			toReturn += current.getData();
+		}
+		return toReturn;
 	}
 
 }
