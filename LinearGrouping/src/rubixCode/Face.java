@@ -1,6 +1,5 @@
 package rubixCode;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Face implements rubixFace<Color> {
@@ -35,6 +34,20 @@ public class Face implements rubixFace<Color> {
 	
 	/*****************************************************************/
 	
+	/**
+	 * @return a boolean representing whether the face is comprised of entirely one Color
+	 * */
+	public boolean isSolid() {
+		Color color = face[0][0];
+		for (Color[] row:face) {
+			for(Color column: row) {
+				if(!column.equals(color)) {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
 	/**
 	 * @return the face
 	 */
