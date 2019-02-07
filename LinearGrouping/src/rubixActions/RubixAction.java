@@ -68,10 +68,31 @@ public class RubixAction implements ActionFace {
 			//TODO:
 		}else if(currentFace.equals(FaceElement.BASE)) {
 			//TODO:
-		}else if(direction.equals(Direction.UP)) {
-			
+		}else if(direction.equals(Direction.LEFT)){
+			rotateLeft();
+		}else {
+//			rotateRight();
 		}
 		
+	}
+	
+	private void rotateLeft() {
+		Color head = cube.getSides().getEntry(0).getData().getFace()[currentRow][0];
+		for(int i = 0; i < 4; i++) { // i = face entry in linkedList
+			for (int j = 0; j < 3; j++) { // currentRow = row, j = index
+				int faceDex = i;
+				int index = j;
+				if(i == 0) {
+					j++;
+				}
+				if(j == 0) {
+					faceDex = i - 1;
+					index = 2;
+				}
+				cube.getSides().getEntry(faceDex).getData().getFace()[currentRow][index] = cube.getSides().getEntry(i).getData().getFace()[currentRow][j];
+			}
+		}
+		cube.getSides().getEntry(3).getData().getFace()[currentRow][2] = head;
 	}
 
 }

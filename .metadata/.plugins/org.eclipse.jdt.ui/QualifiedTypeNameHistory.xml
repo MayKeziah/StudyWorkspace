@@ -3,7 +3,13 @@
 <fullyQualifiedTypeName name="intNode.Node"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.util.Arrays"/>
-<fullyQualifiedTypeName name="rubixCode.Face"/>
 <fullyQualifiedTypeName name="linkedList.LinkedList"/>
 <fullyQualifiedTypeName name="linkedList.Node"/>
+<fullyQualifiedTypeName name="rubixCode.Cube"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="rubixCode.Face"/>
+<fullyQualifiedTypeName name="rubixCode.Color"/>
+<fullyQualifiedTypeName name="rubixActions.RubixAction"/>
+<fullyQualifiedTypeName name="rubixActions.Direction"/>
+<fullyQualifiedTypeName name="rubixActions.FaceElement"/>
 </qualifiedTypeNameHistroy>
