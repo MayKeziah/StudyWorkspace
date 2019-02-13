@@ -56,8 +56,10 @@ public class Cube {
 	}
 	public String toString() {
 		String toReturn = "";
-		for (int i = 0; i < 9; i++) {
-			
+		for (int i = 0; i < 7; i++) {
+			for(int j = i; j < 9; j+=3) {
+				//TODO:
+			}
 		}
 		return toReturn;
 	}
