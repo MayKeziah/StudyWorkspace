@@ -18,6 +18,10 @@ public class Cube {
 		resetCube();
 	}
 	
+	public Color[] getRubix() {
+		return rubix;
+	}
+	
 	public void resetCube() {
 		resetTop();
 		resetSides();
@@ -32,12 +36,12 @@ public class Cube {
 
 	private void resetBase() {
 		for (int i = 45; i < 53; i++) {
-			rubix[1] = colorChoice[5];
+			rubix[i] = colorChoice[5];
 		}
 	}
 
 	private void resetTop() {
-		for(int i = 0; i < 8; i++) {
+		for(int i = 0; i < 9; i++) {
 			rubix[i] = colorChoice[4];
 		}
 	}
@@ -49,5 +53,12 @@ public class Cube {
 			}
 		}
 		
+	}
+	public String toString() {
+		String toReturn = "";
+		for (int i = 0; i < 9; i++) {
+			
+		}
+		return toReturn;
 	}
 }
