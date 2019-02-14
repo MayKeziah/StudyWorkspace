@@ -2,7 +2,6 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="intNode.Node"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="linkedList.LinkedList"/>
 <fullyQualifiedTypeName name="linkedList.Node"/>
 <fullyQualifiedTypeName name="rubixCode.Cube"/>
@@ -12,4 +11,5 @@
 <fullyQualifiedTypeName name="rubixActions.RubixAction"/>
 <fullyQualifiedTypeName name="rubixActions.Direction"/>
 <fullyQualifiedTypeName name="rubixActions.FaceElement"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
 </qualifiedTypeNameHistroy>
